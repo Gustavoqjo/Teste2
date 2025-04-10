@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Copiar Textos</title>
+    <style>
+        .texto-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .texto-container textarea {
+            flex: 1;
+            padding: 5px;
+        }
+        .texto-container button {
+            margin-left: 10px;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="texto-container">
+        <textarea id="texto1" rows="4" cols="50">Texto 1 para copiar...</textarea>
+        <button onclick="copiarTexto('texto1')">Copiar</button>
+    </div>
+
+    <div class="texto-container">
+        <textarea id="texto2" rows="4" cols="50">Texto 2 para copiar...</textarea>
+        <button onclick="copiarTexto('texto2')">Copiar</button>
+    </div>
+
+     <div class="texto-container">
+        <textarea id="texto3" rows="4" cols="50">Texto 3 para copiar...</textarea>
+        <button onclick="copiarTexto('texto3')">Copiar</button>
+    </div>
+
+     <div class="texto-container">
+        <textarea id="texto4" rows="4" cols="50">Texto 4 para copiar...</textarea>
+        <button onclick="copiarTexto('texto4')">Copiar</button>
+    </div>
+
+    <script>
+        function copiarTexto(id) {
+            const elementoTexto = document.getElementById(id);
+            elementoTexto.select();
+            elementoTexto.setSelectionRange(0, 99999);
+            navigator.clipboard.writeText(elementoTexto.value);
+            alert("Texto copiado para a área de transferência!");
+        }
+    </script>
+
+</body>
+</html>
